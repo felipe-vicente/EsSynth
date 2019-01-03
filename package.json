@@ -1,0 +1,21 @@
+{
+  "name": "oscillator",
+  "version": "1.0.0",
+  "description": "Oscillator in javascript",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode=development --server=0.0.0.0:8081",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Felipe Vicente",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.0",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
