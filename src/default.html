@@ -1,0 +1,207 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://fonts.googleapis.com/css?family=Unica+One" rel="stylesheet">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+<style type="text/css">
+
+body{
+  background: url("media/img/brushed_metal_bg.jpg");
+  background-size: cover;
+  padding: 20px;
+  color: #FFF;
+  font-family: 'Unica One', cursive;
+}
+
+#oscillator1, #oscillator2{
+  padding: 20px;
+  border: 2px solid #FFF;
+  border-radius: 6px;
+}
+
+.osc h1{
+  margin: 0;
+  font-size: 30px;
+  display: block;
+  text-align: center;
+}
+
+.osc h2{
+  margin: 0 0 10px 0;
+  font-size: 14px;
+}
+
+.osc .controls{
+  display: flex;
+  width: 100%;
+}
+
+.osc .controls .fre{
+  display: block;
+  width: 60px;
+  padding: 0 20px;
+  border-color: #FFF;
+  border-style: solid;
+  border-width: 0 1px 0 0;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.osc .controls .fre .sli{
+  background-image: url(media/img/slide_bg.png);
+  height: 200px;
+  display: block;
+  margin: 0 auto;
+  border: none;
+  padding: 0 7px;
+  background-color: transparent;
+  background-repeat: repeat-y;
+  background-position: center top;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+  border: 0px;
+  width: 42px;
+  left: -8px;
+  background: url(media/img/slider_button.png);
+  height: 21px;
+}
+
+.osc .controls .wav{
+  display: block;
+  width: 100px;
+  padding: 0 20px;
+  border-color: #FFF;
+  border-style: solid;
+  border-width: 0 1px 0 0;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.osc .controls .wav .knob_out{
+  position: relative;
+  margin-top: 50px;
+}
+
+.osc .controls .wav .knob{
+  background-image: url("media/img/knob.png");
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-size: 50px;
+  left: 25px;
+  top: 25px;
+  transform: rotate(-90deg);
+}
+
+.osc .controls .wav .type{
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-image: url("media/img/waves.png");
+}
+
+.osc .controls .wav .type.sine{
+  background-position: 0 0;
+  left: 0;
+  top: 40px;
+}
+
+.osc .controls .wav .type.square{
+  background-position: -20px 0;
+  left: 40px;
+  top: 0;
+}
+
+.osc .controls .wav .type.sawtooth{
+  background-position: -40px 0;
+  left: 80px;
+  top: 40px;
+}
+
+.osc .controls .wav .type.triangle{
+  background-position: -60px 0;
+  left: 40px;
+  top: 80px;
+}
+
+</style>
+<script type="text/javascript">
+
+window.AudioContext = window.AudioContext || window.webkitAudioContext;
+ctx = new AudioContext();
+
+osc1 = ctx.createOscillator();
+osc1.frequency.value = 0;
+osc1.type = "sine";
+osc1.connect(ctx.destination);
+
+osc2 = ctx.createOscillator();
+osc2.frequency.value = 440;
+osc2.type = "sine";
+osc2.connect(ctx.destination);
+
+osc1.start(0);
+//osc2.start(0);
+
+$(function(){
+
+$( "#slider-frequency1" ).slider({
+  orientation: "vertical",
+  value: 60,
+  min: 0,
+  max: 2000,
+  slide: function(e, ui){
+    console.log(ui.value)
+    osc1.frequency.value = ui.value;
+  }
+});
+
+$(".wav .type").bind("click", function(){
+  var t = $(this).attr("data-type");
+  var d = $(this).attr("data-deg");
+  osc1.type = t;
+  $(".wav .knob").css({
+    transform: "rotate(" + d + "deg)"
+  });
+});
+
+});
+
+</script>
+</head>
+<body>
+
+<div id="oscillator1" class="osc">
+  <h1>OSCILLATOR 1</h1>
+
+<div class="controls">
+
+<div class="fre">
+  <h2>Frequency</h2>
+  <div class="sli" id="slider-frequency1" style="height:200px;"></div>
+</div>
+
+<div class="wav">
+  <h2>Wave Type</h2>
+  <div class="knob_out">
+    <a class="type sine" data-type="sine" data-deg="-90"></a>
+    <a class="type square" data-type="square" data-deg="0"></a>
+    <a class="type sawtooth" data-type="sawtooth" data-deg="90"></a>
+    <a class="type triangle" data-type="triangle" data-deg="180"></a>
+    <div class="knob"></div>
+  </div>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

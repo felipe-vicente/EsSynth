@@ -60,7 +60,7 @@ module.exports = {
     // Possible Errors (http://eslint.org/docs/rules/#possible-errors)
     'no-await-in-loop': 1,
     'no-cond-assign': 1,
-    'no-console': 1,
+    'no-console': 0,
     'no-constant-condition': [1, {checkLoops: false}],
     'no-control-regex': 1,
     'no-debugger': 1,
