@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+	 id="svg2" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sodipodi="http://inkscape.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:cc="http://web.resource.org/cc/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" inkscape:version="0.41" sodipodi:docbase="/home/petr" sodipodi:docname="transistor.symbol.svg" sodipodi:version="0.32"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="50.029px"
+	 viewBox="37.501 37.487 50 50.029" enable-background="new 37.501 37.487 50 50.029" xml:space="preserve">
+<sodipodi:namedview  borderopacity="1.0" inkscape:cy="61.593040" gridspacingy="5.0000000pt" pagecolor="#ffffff" gridoriginx="0.0000000pt" gridoriginy="0.0000000pt" showgrid="true" gridspacingx="5.0000000pt" id="base" inkscape:cx="70.418384" inkscape:zoom="3.9597980" bordercolor="#666666" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-x="0" inkscape:document-units="pt" inkscape:window-y="0" inkscape:current-layer="layer1" inkscape:grid-points="true" inkscape:window-height="680" inkscape:window-width="1016">
+	</sodipodi:namedview>
+<g>
+	<path fill="#FFFFFF" d="M50.205,66.883l20.141,17.08v0.848c0,0.451,0.365,0.817,0.817,0.817s0.817-0.366,0.817-0.817v-1.227
+		c0-0.239-0.105-0.468-0.289-0.623l-20.43-17.325c-0.344-0.292-0.86-0.249-1.152,0.095C49.818,66.074,49.86,66.592,50.205,66.883z"
+		/>
+	<path fill="#FFFFFF" d="M86.599,62.501h-0.901c0,6.411-2.596,12.209-6.795,16.412c-4.2,4.202-9.994,6.797-16.401,6.797
+		s-12.202-2.595-16.402-6.797c-4.199-4.203-6.793-10.001-6.794-16.412c0-6.412,2.595-12.209,6.794-16.413
+		c4.2-4.202,9.995-6.797,16.402-6.797c6.407,0,12.202,2.596,16.401,6.797c4.199,4.203,6.795,10,6.795,16.413H86.599h0.902
+		c-0.001-13.815-11.191-25.014-25-25.014c-13.809,0-25,11.199-25,25.014c0,13.813,11.191,25.014,25,25.015
+		c13.809-0.001,24.999-11.201,25-25.015H86.599z"/>
+	<polyline fill="#FFFFFF" points="49.425,50.241 49.425,74.759 51.061,74.759 51.061,50.241 	"/>
+	<path fill="#FFFFFF" d="M38.403,63.318l11.839-0.001c0.452-0.001,0.818-0.366,0.818-0.817c-0.001-0.452-0.366-0.818-0.818-0.818
+		l-11.839,0.001c-0.451,0-0.817,0.366-0.817,0.818C37.586,62.952,37.952,63.318,38.403,63.318"/>
+	<path fill="#FFFFFF" d="M50.753,59.053l20.431-16.345c0.194-0.155,0.307-0.39,0.307-0.639V40.19c0-0.452-0.365-0.817-0.818-0.817
+		c-0.451,0-0.817,0.365-0.817,0.817v1.486l-20.122,16.1c-0.353,0.281-0.41,0.796-0.127,1.149
+		C49.886,59.277,50.4,59.334,50.753,59.053z"/>
+	<path fill="#FFFFFF" d="M60.08,69.392l5.907,9.77l-10.829-3.616C57.949,74.798,59.929,72.306,60.08,69.392z"/>
+</g>
+</svg>

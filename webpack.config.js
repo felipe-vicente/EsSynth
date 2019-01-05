@@ -1,10 +1,12 @@
 const path = require("path")
+const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const CopyWebpackPlugin = require("copy-webpack-plugin")
 const WorkboxPlugin = require("workbox-webpack-plugin")
-const webpack = require("webpack")
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
+const WebpackPwaManifest = require("webpack-pwa-manifest")
 
-module.exports = (env = "production") => {
+module.exports = (env = "development") => {
   const sourcePath = path.join(__dirname, "./src")
   const outPath = path.join(__dirname, "./dist")
 
@@ -13,6 +15,11 @@ module.exports = (env = "production") => {
     entry: sourcePath + "/index.js",
     context: sourcePath,
     target: "web",
+    optimization: {
+      minimizer: [
+        new UglifyJsPlugin()
+      ],
+    },
     output: {
       path: outPath,
       filename: "bundle_[hash].js",
@@ -57,6 +64,10 @@ module.exports = (env = "production") => {
       }
     },
     plugins: [
+    new webpack.EnvironmentPlugin({
+      NODE_ENV: env, // use 'development' unless process.env.NODE_ENV is defined
+      DEBUG: false
+    }),
     new webpack.ProvidePlugin({
       "jQuery": "jquery",
     }),
@@ -66,7 +77,7 @@ module.exports = (env = "production") => {
     new CopyWebpackPlugin([
       {
         from: sourcePath + "/assets",
-        to: "/assets"
+        to: outPath + "/assets"
       }
     ]),
     new WorkboxPlugin.GenerateSW({
@@ -74,7 +85,22 @@ module.exports = (env = "production") => {
       // and not allow any straggling "old" SWs to hang around
       clientsClaim: true,
       skipWaiting: true
-    })
+    }),
+    new WebpackPwaManifest({
+      name: "ESynth Mobile",
+      short_name: "ESynth",
+      filename: "manifest.json",
+      description: "ESynth Mobile - Mobile Javascript Web Audio API Synthesizer",
+      inject: true,
+      background_color: "#000000",
+      theme_color: "#000000",
+      icons: [
+        {
+          src: sourcePath + "/assets/img/esynth.png",
+          sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
+        }
+      ]
+    }),
   ]
   })
 }

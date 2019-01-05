@@ -1,0 +1,42 @@
+{
+  "icons": [
+    {
+      "src": "/icon_512x512.7ac5eb44ee3ec2231428104d417ceeb7.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_384x384.968e718ef9d3adb84607c0d8a1354d86.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_256x256.b29dbc0d4ff14d8cbbdcc6284646f145.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_192x192.278a7203e83e5440587a52f1c1214aa6.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_128x128.494c48114c11beca07293ef6c2abcc79.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_96x96.fb47e67dc4b78cc59398b7cec5a05725.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "name": "ESynth Mobile",
+  "short_name": "ESynth",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "description": "ESynth Mobile - Mobile Javascript Web Audio API Synthesizer",
+  "background_color": "#000000",
+  "theme_color": "#000000"
+}

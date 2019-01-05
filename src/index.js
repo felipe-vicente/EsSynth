@@ -6,16 +6,19 @@ import { theme } from "./theme"
 
 const isNotSupoported = !window.AudioContext && !window.webkitAudioContext
 
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/service-worker.js").then(registration => {
-      console.log("SW registered: ", registration)
-    }).catch(registrationError => {
-      console.log("SW registration failed: ", registrationError)
-    })
-  })
-}
+const environment = process.env.NODE_ENV ? process.env.NODE_ENV : "development"
 
+if (environment === "production") {
+	if ("serviceWorker" in navigator) {
+	  window.addEventListener("load", () => {
+	    navigator.serviceWorker.register("service-worker.js").then(registration => {
+	      console.log("SW registered: ", registration)
+	    }).catch(registrationError => {
+	      console.log("SW registration failed: ", registrationError)
+	    })
+	  })
+	}
+}
 
 const NotSupported = () => (
 	<div style={{

@@ -82,7 +82,7 @@ export const styles = theme => ({
     boxSizing: "border-box"
   },
   slider: {
-    backgroundImage: "url(/assets/img/slide_bg.png)",
+    backgroundImage: "url(assets/img/slide_bg.png)",
     height: "200px",
     display: "block",
     margin: "0 auto",
@@ -153,7 +153,7 @@ export const styles = theme => ({
     position: "absolute",
     width: "20px",
     height: "20px",
-    backgroundImage: 'url("/assets/img/waves.png")',
+    backgroundImage: 'url("assets/img/waves.png")',
     "&.sine": {
       backgroundPosition: "0 0",
       left: "0",

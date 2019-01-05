@@ -24,27 +24,32 @@ export const Oscillator = injectSheet(styles)(
       this.amplifier.connect(ctx.destination)
       // Connects oscillator to amp
       // this.oscillator.connect(this.amplifier)
-      // Start oscillator whithout connecting to amplifier
-      this.oscillator.start(0)
 
       this.state = {
         frequency: 440,
         volume: 1,
         detune: 0,
         wave: "sine",
-        playing: false
+        playing: false,
+        started: false
       }
     }
 
     toggleAmplifier() {
       const isPlaying = this.state.playing
+      const hasStarted = this.state.started
       this.setState({
-        playing: !isPlaying
+        playing: !isPlaying,
+        started: true
       })
       isPlaying ? (
         this.oscillator.disconnect(this.amplifier)
       ) : (
         this.oscillator.connect(this.amplifier)
+      )
+      !hasStarted && (
+        // Start oscillator only after user interaction, prevents browser to block sounds
+        this.oscillator.start(0)
       )
     }
 
